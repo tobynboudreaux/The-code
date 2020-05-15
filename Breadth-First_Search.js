@@ -9,3 +9,5 @@ var location = {
     distanceFromLeft: distanceFromLeft,
     path: [],
 };
+
+var queue = [location];
