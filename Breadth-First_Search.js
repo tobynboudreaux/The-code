@@ -83,3 +83,21 @@ var locationStatus = function(location, grid) {
             return "Valid";
         }
 };
+
+//Explores the grid from the given location in the given direction
+var exploreInDirection = function(currentLocation, direction, grid) {
+    var newPath = currentLocation.path.slice();
+    newPath.push(direction);
+
+    var dft = currentLocation.distanceFromTop;
+    var dfl = currentLocation.distanceFromLeft;
+
+    if (direction === "North") {
+        dft -= 1;
+    } else if (direction === "East") {
+        dfl += 1;
+    } else if (direction === "South") {
+        dft += 1;
+    } else if (direction === "West") {
+        dfl -= 1;
+    }
