@@ -131,7 +131,7 @@ for (var i = 0; i < gridSize; i++) {
 
 //Test locations and path
 grid[0][0] = "Start";
-grid[4][4] = "Goal";
+grid[32][16] = "Goal";
 
 grid[1][1] = "Obstacle";
 grid[1][4] = "Obstacle";
@@ -139,3 +139,5 @@ grid[1][3] = "Obstacle";
 grid[2][1] = "Obstacle";
 
 console.log(findShortestPath([0,0], grid));
+
+var locations = document.querySelector('grid-item')
