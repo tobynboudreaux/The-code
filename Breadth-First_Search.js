@@ -11,3 +11,10 @@ var location = {
 };
 
 var queue = [location];
+
+//Loop through the grid searching for the goal
+while (queue.length > 0) {
+    //Take the first location off the queue
+    var currentLocation = queue.shift();
+
+ 
