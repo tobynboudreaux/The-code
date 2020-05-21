@@ -101,3 +101,41 @@ var exploreInDirection = function(currentLocation, direction, grid) {
     } else if (direction === "West") {
         dfl -= 1;
     }
+
+var newLocation = {
+        distanceFromTop: dft,
+        distanceFromLeft: dfl,
+        path: newPath,
+        status: "Unknown"
+    };
+    newLocation.status = locationStatus(newLocation, grid);
+
+    //If this new location is valid, mark it as "Visited"
+    if (newLocation.status === "Valid") {
+        grid[newLocation.distanceFromTop][newLocation.distanceFromLeft] = "Visited";
+    }
+
+    return newLocation;
+};
+
+// Create a 4x4 grid
+// Represent the grid as a 2-dimentional array
+var gridSize = 16;
+var grid = [];
+for (var i = 0; i < gridSize; i++) {
+    grid[i] = [];
+    for (var j = 0; j < gridSize; j++) {
+        grid[i][j] = 'Empty';
+    }
+}
+
+//Test locations and path
+grid[0][0] = "Start";
+grid[4][4] = "Goal";
+
+grid[1][1] = "Obstacle";
+grid[1][4] = "Obstacle";
+grid[1][3] = "Obstacle";
+grid[2][1] = "Obstacle";
+
+console.log(findShortestPath([0,0], grid));
