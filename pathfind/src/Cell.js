@@ -51,7 +51,6 @@ export default class Cell extends Component {
     } else if (type === "Obstacle") {
       return this.handleObstacles.bind(this)
     } 
-    
   }
   
   render() {

@@ -37,6 +37,7 @@ class App extends React.Component {
     this.state.obstacles ? this.state.obstacles.map((obstacle) => grid[obstacle[0][0]][obstacle[1]] = "Obstacle") : console.log(Path(this.state.start, grid))
     
     let path = Path(this.state.start, grid)
+    console.log(path)
     var dft = parseInt(this.state.start[0]);
     var dfl = parseInt(this.state.start[1]);  
     
@@ -80,9 +81,18 @@ class App extends React.Component {
     this.state.path.map((d) => console.log(d))
   }
 
+  randomMaze = (grid, vertex) => {
+    var dft = vertex[0]
+    var dfl = vertex[1]
+    var path = [vertex];
+    vertex = 'Visited'
+    console.log(dft, dfl, path, vertex)
+    // grid.map((x, y) => console.log(dft, dfl))
+  }
+
 
 render() {
-  console.log(this.state.currentLoc)
+  this.randomMaze(grid, [0, 0])
   return (
     <div className="App">
       <button onClick={this.findPath}>Find Path</button>
