@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Matrix from './Matrix.js'
 import { grid } from './data.js'
 import { Path } from './Path'
